@@ -11,7 +11,7 @@
     </v-sheet>
     <div class="hero">
       <v-container fill-height>
-        <v-row>
+        <v-row class="hero-text">
           <v-container>
             <v-row v-if="loaded && !scheduled">
               <v-col cols="12" md="8" offset-md="2">
@@ -182,7 +182,7 @@ export default class Home extends Vue {
 <style lang="scss" scoped>
 .hero {
   height: 100vh;
-  background: radial-gradient(#572b9e, #1f1013);
+  background: linear-gradient(45deg, #00e4c6 0%, #07c7b6 25%, #4f399f 75%, #572b9e) 100%;
   overflow-y: hidden;
   animation: fadeIn 1 1s ease-out;
 }
@@ -286,5 +286,9 @@ export default class Home extends Vue {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.hero-text {
+  text-shadow: 0px 10px 8px rgb(0 0 0 / 20%);
 }
 </style>
