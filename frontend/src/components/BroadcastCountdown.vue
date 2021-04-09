@@ -41,13 +41,13 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
   },
 })
 export default class BroadcastCountdown extends Vue {
-  @Prop({ default: new Date() }) readonly date: Date
+  @Prop({ default: new Date() }) readonly date!: Date;
 
   get h1Class() {
-      return this.$vuetify.breakpoint.mobile ? 'text-h3' : 'text-h1'
+    return this.$vuetify.breakpoint.mobile ? "text-h3" : "text-h1";
   }
   get h4Class() {
-      return this.$vuetify.breakpoint.mobile ? '' : 'text-h4'
+    return this.$vuetify.breakpoint.mobile ? "" : "text-h4";
   }
 
   get displayDate(): string {

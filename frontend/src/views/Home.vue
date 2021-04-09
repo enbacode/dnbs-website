@@ -15,7 +15,11 @@
           <v-container>
             <v-row v-if="loaded && !scheduled">
               <v-col cols="12" md="8" offset-md="2">
-                <div :class="`${$vuetify.breakpoint.mobile ? 'text-h3' : 'text-h2'} white--text text-center`">
+                <div
+                  :class="`${
+                    $vuetify.breakpoint.mobile ? 'text-h3' : 'text-h2'
+                  } white--text text-center`"
+                >
                   {{ $vuetify.lang.t("$vuetify.no_stream_scheduled") }}
                 </div>
               </v-col>
@@ -111,50 +115,62 @@ import broadcast from "@/assets/broadcast.json";
   },
 })
 export default class Home extends Vue {
-  private broadcast = null
+  private broadcast : null | any = null;
   private debugOption = 2;
 
   created() {
     fetch("http://localhost:3080/api/streams/next");
-    this.debugChange()
+    this.debugChange();
   }
-  
+
   get live() {
-    return this.loaded && ['live', 'liveStarting'].includes(this.broadcast?.status?.lifeCycleStatus)
+    return (
+      this.loaded &&
+      ["live", "liveStarting"].includes(this.broadcast?.status?.lifeCycleStatus)
+    );
   }
 
   get loaded() {
-    return this.broadcast !== null
+    return this.broadcast !== null;
   }
 
   get date() {
-    return new Date(this.broadcast?.snippet?.scheduledStartTime)
+    return new Date(this.broadcast?.snippet?.scheduledStartTime);
   }
 
   get scheduled() {
-    return this.loaded && this.broadcast.snippet
+    return this.loaded && this.broadcast.snippet;
   }
 
   debugChange() {
     switch (this.debugOption) {
       case 0:
-        this.broadcast = null
+        this.broadcast = null;
         break;
       case 1:
-        this.broadcast = {}
+        this.broadcast = {};
         break;
       case 2:
-        this.broadcast = JSON.parse(JSON.stringify(broadcast))
-        this.broadcast.snippet.scheduledStartTime = dayjs().add(11, 'days').toISOString()
+        this.broadcast = JSON.parse(JSON.stringify(broadcast));
+        this.broadcast.snippet.scheduledStartTime = dayjs()
+          .add(11, "days")
+          .toISOString();
         break;
       case 3:
-        this.broadcast = JSON.parse(JSON.stringify(broadcast))
-        this.broadcast.snippet.scheduledStartTime = dayjs().add(23, 'hours').toISOString()
+        this.broadcast = JSON.parse(JSON.stringify(broadcast));
+        this.broadcast.snippet.scheduledStartTime = dayjs()
+          .add(23, "hours")
+          .toISOString();
         break;
       case 4:
-        this.broadcast = JSON.parse(JSON.stringify(broadcast))
-        this.broadcast.snippet.scheduledStartTime = dayjs().toISOString()
-        this.broadcast.status.lifeCycleStatus = 'live'
+        this.broadcast = {
+          status: {
+            lifeCycleStatus: ''
+          }
+        }
+        this.broadcast = JSON.parse(JSON.stringify(broadcast));
+        this.broadcast.snippet.scheduledStartTime = dayjs().toISOString();
+        this.broadcast.status.lifeCycleStatus = "live";
         break;
       default:
         break;
