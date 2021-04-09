@@ -4,6 +4,13 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
+import dayjs from "dayjs";
+import "dayjs/locale/de";
+import relativeTime from "dayjs/plugin/relativeTime";
+import duration from "dayjs/plugin/duration";
+
+dayjs.extend(duration);
+dayjs.extend(relativeTime);
 
 Vue.config.productionTip = false;
 

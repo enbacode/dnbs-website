@@ -1,0 +1,50 @@
+
+      {
+        "kind": "youtube#liveBroadcast",
+        "etag": "PleWcUWhCRNkzceZ2hD-E8ojPe8",
+        "id": "vT9nb1JL2HY",
+        "snippet": {
+          "publishedAt": "2021-04-08T20:41:38Z",
+          "channelId": "UCktv75sp9KEXUvF7vjgx6Zw",
+          "title": "Test",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/vT9nb1JL2HY/default_live.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/vT9nb1JL2HY/mqdefault_live.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/vT9nb1JL2HY/hqdefault_live.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/vT9nb1JL2HY/sddefault_live.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/vT9nb1JL2HY/maxresdefault_live.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "scheduledStartTime": "2021-05-05T20:00:00Z",
+          "isDefaultBroadcast": false,
+          "liveChatId": "KicKGFVDa3R2NzVzcDlLRVhVdkY3dmpneDZadxILdlQ5bmIxSkwySFk"
+        },
+        "status": {
+          "lifeCycleStatus": "ready",
+          "privacyStatus": "public",
+          "recordingStatus": "notRecording",
+          "madeForKids": false,
+          "selfDeclaredMadeForKids": false
+        }
+      }
+  
