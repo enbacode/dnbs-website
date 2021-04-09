@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.709610aeb67c5562de13b57015f8609a.js"
+  "/dnbs-website/precache-manifest.4826f63ac1122aa50f6012370258fcea.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "DNBS"});
